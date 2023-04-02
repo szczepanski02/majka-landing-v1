@@ -12,6 +12,7 @@
 
   &__left-side {
     width: 48%;
+    box-sizing: border-box;
 
     @media(max-width: 678px) {
       width: 80%;
@@ -20,10 +21,6 @@
     }
 
     @media(max-width: 486px) {
-      width: 100%;
-    }
-
-    & img {
       width: 100%;
     }
   }
@@ -42,6 +39,10 @@
     }
 
     @media(max-width: 486px) {
+      width: 100%;
+    }
+
+    & img {
       width: 100%;
     }
   }

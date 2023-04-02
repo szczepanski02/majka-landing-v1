@@ -7,8 +7,14 @@
     <p class="header__desc">{{ description }}</p>
   </div>
 
-  <div class="container arrow-container">
+  <div class="container arrow-container" (click)="scroll(target)">
     <img src="/assets/images/arrow-down.svg" alt="">
     <span>ZOBACZ WIĘCEJ</span>
   </div>
+
+  <div class="container social-media">
+    <app-social-buttons></app-social-buttons>
+  </div>
+
+  <div class="scroll-target" #target></div>
 </div>

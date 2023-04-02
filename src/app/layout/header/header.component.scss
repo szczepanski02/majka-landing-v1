@@ -17,6 +17,10 @@
     top: 0;
     left: 0;
     max-width: 120px;
+
+    @media(max-width: 1220px) {
+      display: none;
+    }
   }
 
   & .right-curtain {
@@ -24,6 +28,10 @@
     top: 0;
     right: 0;
     max-width: 120px;
+
+    @media(max-width: 1220px) {
+      display: none;
+    }
   }
 
   & .container {
@@ -46,10 +54,27 @@
   display: flex;
   align-items: center;
   position: absolute;
-  bottom: 20px;
+  bottom: 120px;
+  cursor: pointer;
+
+  & span {
+    font-weight: 500;
+  }
 
   & img {
     margin-right: 10px;
      
   }
+}
+
+.scroll-target {
+  position: absolute;
+  bottom: -100px;
+}
+
+.social-media {
+  position: absolute;
+  bottom: 120px;
+  display: flex;
+  justify-content: flex-end;
 }

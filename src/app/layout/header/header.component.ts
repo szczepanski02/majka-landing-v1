@@ -28,13 +28,16 @@ export class HeaderComponent implements OnInit, AfterViewInit {
     }
 
     if (this.hasRightOverload) {
-      this.headerDiv.nativeElement.style.clipPath = `polygon(0 0, 100% 0, 100% 100%, 0 93%);`;
+      this.headerDiv.nativeElement.style.clipPath = `polygon(0 0, 100% 0, 100% 100%, 0 93%)`;
     }
 
     if (this.hasBilateralOverload) {
-      this.headerDiv.nativeElement.style.clipPath = `polygon(100% 85%, 50% 100%, 0% 85%, 0% 0%, 100% 0%);`;
+      this.headerDiv.nativeElement.style.clipPath = `polygon(100% 85%, 50% 100%, 0% 85%, 0% 0%, 100% 0%)`;
     }
+  }
 
+  scroll(el: HTMLElement) {
+    el.scrollIntoView();
   }
 
   get hasCurtain(): boolean {
