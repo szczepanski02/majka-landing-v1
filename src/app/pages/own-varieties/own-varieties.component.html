@@ -1,0 +1,27 @@
+<app-header
+  title="Odmiany własne"
+  description="Z przyjemnością przedstawiamy Państwu i oddajemy Państwa ocenie odmiany roślin wyhodowane w naszym gospodarstwie. Jesteśmy niezmiernie ciekawi, czy jakieś pozycje przyciągną Państwa uwagę oraz czy zechcą Państwo propagować je szerokim rzeszom swoich klientów. Zapraszamy do naszej szkółki, gdzie pasja łączy się z profesjonalizmem."
+  backgroundUrl="/assets/images/header-own-varieties.jpg"
+  [overlays]="[HeaderOverlays.RIGHT_OVERLOAD]">
+</app-header>
+
+<div class="content">
+  <div class="own-varieties" *ngFor="let item of items; index as i">
+    <div class="container">
+      <app-own-varieties-item-left-text [item]="item" *ngIf="(i + 1) % 2 === 0"></app-own-varieties-item-left-text>
+      <app-own-varieties-item-right-text [item]="item" *ngIf="(i + 1) % 2 !== 0"></app-own-varieties-item-right-text>
+    </div>
+
+    <div class="section-divider-left" *ngIf="(i + 1) % 3 === 0 && (i + 1) % 6 !== 0"></div>
+  </div>
+  
+  <div class="container">
+    <div class="own-varieties__paginator">
+      <app-paginator [totalPages]="20" [page]="(page$ | async)!" (onPageChange)="handlePageChanged($event)"></app-paginator>
+    </div>
+  </div>
+
+  <div class="section-divider-right"></div>
+
+  <app-footer></app-footer>
+</div>

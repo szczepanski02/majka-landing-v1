@@ -1,0 +1,21 @@
+<app-header
+  title="Sprawdź naszą ofertę"
+  description=""
+  backgroundUrl="/assets/images/header-offer.jpg"
+  [overlays]="[HeaderOverlays.BILATERAL_OVERLOAD]">
+</app-header>
+
+<div class="content">
+
+  <div class="container">
+    <app-offer-tools-bar></app-offer-tools-bar>
+    <app-offer-grid></app-offer-grid>
+    <div class="paginator">
+      <app-paginator [page]="(page$ | async)!" [totalPages]="20" (onPageChange)="onPageChanged($event)"></app-paginator>
+    </div>
+  </div>
+
+  <div class="section-divider-right"></div>
+
+  <app-footer></app-footer>
+</div>

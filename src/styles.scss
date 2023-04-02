@@ -1,1 +1,91 @@
+@mixin section-divider {
+  width: 100%;
+  height: 240px;
+  box-sizing: border-box;
+  margin: 0 auto;
+  background-size: 100% auto;
+  max-width: 1920px;
+}
+
 /* You can add global styles to this file, and also import other style files */
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box !important;
+  background-color: #111113;
+  font-family: 'Albert Sans', sans-serif;
+  color: #fff;
+  font-weight: 500;
+  font-size: 20px;
+  letter-spacing: 0.2px;
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+   -khtml-user-select: none; /* Konqueror HTML */
+     -moz-user-select: none; /* Old versions of Firefox */
+      -ms-user-select: none; /* Internet Explorer/Edge */
+          user-select: none;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+span {
+  font-size: 18px;
+  font-weight: 300;
+}
+
+p {
+  font-weight: 300;
+}
+
+.container {
+  max-width: 1140px;
+  padding: 15px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.red-text {
+  color: #FF1A25;
+}
+
+.section-title {
+  font-size: 46px;
+  color: #FF1A25;
+  font-weight: 700;
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+.section-divider-left {
+  @include section-divider;
+  background: url('/assets/images/section-divider-left.jpg') center/cover no-repeat;
+}
+
+.section-divider-right {
+  @include section-divider;
+  background: url('/assets/images/section-divider-right.jpg') center/cover no-repeat;
+}
+
+.section-divider-center {
+  @include section-divider;
+  background: url('/assets/images/section-divider-center.jpg') center/cover no-repeat;
+}
+
+.btn {
+  background-color: transparent;
+  border: 1px solid #FF1A25;
+  border-radius: 4px;
+  text-transform: uppercase;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 14px 30px;
+  color: #fff;
+  transition: 200ms ease-in-out;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #FF1A25;
+  }
+}

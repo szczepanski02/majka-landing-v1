@@ -1,0 +1,35 @@
+<div class="paginator">
+  <div class="paginator__arrow" (click)="prevPage()">
+    <img src="/assets/images/arrow-left.svg" alt="">
+  </div>
+
+  <div class="paginator__page" *ngIf="showFirstPage && !simpleView" (click)="pageChanged(1)">
+    <span>1</span>
+  </div>
+
+  <div class="paginator__dots" *ngIf="showFirstPage && !simpleView">
+    <span>...</span>
+  </div>
+
+  <ng-container *ngIf="!simpleView">
+    <div class="paginator__page" *ngFor="let item of pagesToDisplay" [class.active]="item === page" (click)="pageChanged(item)">
+      <span>{{ item }}</span>
+    </div>
+  </ng-container>
+
+  <div class="paginator__dots" *ngIf="showLastPage && !simpleView">
+    <span>...</span>
+  </div>
+
+  <div class="paginator__page" *ngIf="showLastPage && !simpleView" (click)="pageChanged(totalPages)">
+    <span>{{ totalPages }}</span>
+  </div>
+
+  <div class="paginator__current-page active" *ngIf="simpleView">
+    <span>{{ page }}</span>
+  </div>
+
+  <div class="paginator__arrow" (click)="nextPage()">
+    <img src="/assets/images/arrow-right.svg" alt="">
+  </div>
+</div>

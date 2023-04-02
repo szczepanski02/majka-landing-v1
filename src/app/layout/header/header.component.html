@@ -1,0 +1,14 @@
+<div class="header" #header>
+  <img class="left-curtain" *ngIf="hasCurtain" src="/assets/images/left-curtain.png" alt="">
+  <img class="right-curtain" *ngIf="hasCurtain" src="/assets/images/right-curtain.png" alt="">
+  <div class="container">
+    <h3 class="header__comp-name" *ngIf="showCompanyName">A&M Kałuzińscy</h3>
+    <h3 class="header__title">{{ title }}</h3>
+    <p class="header__desc">{{ description }}</p>
+  </div>
+
+  <div class="container arrow-container">
+    <img src="/assets/images/arrow-down.svg" alt="">
+    <span>ZOBACZ WIĘCEJ</span>
+  </div>
+</div>

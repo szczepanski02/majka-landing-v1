@@ -1,0 +1,18 @@
+<div class="container">
+  <div class="awards">
+    <div class="awards__img">
+      <img src="/assets/images/home-awards.jpg" width="100%" alt="">
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu.</p>
+    </div>
+    <div class="awards__text">
+      <h5>Brązowy medal w konkursie roślin nowości</h5>
+      <div class="divider"></div>
+      <div class="awards__items">
+        <div class="awards__item" *ngFor="let award of awards">
+          <p>{{ award }}</p>
+          <div class="divider"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

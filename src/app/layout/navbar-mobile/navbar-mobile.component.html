@@ -1,0 +1,28 @@
+<div class="mobile-nav">
+  <div class="container">
+      <div class="mobile-nav__logo" [routerLink]="['/']">
+          <img class="nav__logo-file" src="/assets/images/logo.png" width="40px" alt="logo A&M Kałuzińscy">
+      </div>
+
+      <div class="mobile-nav__collapsing">
+          <div class="mobile-nav__hamburger-container">
+              <div class="mobile-nav__hamburger" [ngClass]="{ 'change': isNavbarCollapsed }" (click)="changeHamburgerIconState()">
+                  <div class="mobile-nav__hamburger-item-1"></div>
+                  <div class="mobile-nav__hamburger-item-2"></div>
+                  <div class="mobile-nav__hamburger-item-3"></div>
+              </div>
+          </div>
+  
+          <div class="mobile-nav__collapsed-container" [ngClass]="{'isOpen': isNavbarCollapsed === true, 'isHidden': isNavbarCollapsed === false }">
+              <div class="mobile-nav__collapsed-content" [ngClass]="{'collapsedContentIsOpen': isNavbarCollapsed === true, 'collapsedContentIsHidden': isNavbarCollapsed === false }">
+                  <p class="mobile-nav__collapsed-item" [routerLink]="['/']" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}" (click)="changeHamburgerIconState()">Strona główna</p>
+                  <p class="mobile-nav__collapsed-item" [routerLink]="['/offer']" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}" (click)="changeHamburgerIconState()">Oferta</p>
+                  <p class="mobile-nav__collapsed-item" [routerLink]="['/own-varieties']" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}" (click)="changeHamburgerIconState()">Odmiany własne</p>
+                  <p class="mobile-nav__collapsed-item" [routerLink]="['/selling-conditions']" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}" (click)="changeHamburgerIconState()">Warunki sprzedaży</p>
+                  <p class="mobile-nav__collapsed-item" [routerLink]="['/selling-points']" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}" (click)="changeHamburgerIconState()">Punkt sprzedaży</p>
+                  <p class="mobile-nav__collapsed-item" [routerLink]="['/contact']" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}" (click)="changeHamburgerIconState()">Kontakt</p>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>

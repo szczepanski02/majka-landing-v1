@@ -1,0 +1,27 @@
+<div class="navbar">
+  <div class="container">
+    <div class="navbar__logo" [routerLink]="'/'">
+      <img src="/assets/images/logo.png" alt="">
+    </div>
+    <div class="navbar__items">
+      <div class="navbar__item" [routerLink]="'/offer'" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}">
+        <span>Oferta</span>
+      </div>
+      <div class="navbar__item" [routerLink]="'/own-varieties'" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}">
+        <span>Odmiany własne</span>
+      </div>
+      <div class="navbar__item" [routerLink]="'/selling-conditions'" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}">
+        <span>Warunki sprzedaży</span>
+      </div>
+      <div class="navbar__item" [routerLink]="'/selling-points'" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}">
+        <span>Punkt sprzedaży</span>
+      </div>
+      <div class="navbar__item" [routerLink]="'/orders'" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}">
+        <span>Zamówienia</span>
+      </div>
+      <div class="navbar__item" [routerLink]="'/contact'" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}">
+        <span>Kontakt</span>
+      </div>
+    </div>
+  </div>
+</div>

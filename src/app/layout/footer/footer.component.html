@@ -1,0 +1,52 @@
+<div class="footer">
+  <div class="container">
+
+    <div class="footer__nav">
+      <div class="footer__nav-item" [routerLink]="'/offer'" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}">
+        <span>Oferta</span>
+      </div>
+
+      <div class="footer__nav-item" [routerLink]="'/own-varieties'" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}">
+        <span>Odmiany własne</span>
+      </div>
+
+      <div class="footer__nav-item" [routerLink]="'/selling-conditions'" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}">
+        <span>Warunki sprzedaży</span>
+      </div>
+
+      <div class="footer__nav-item" [routerLink]="'/selling-points'" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}">
+        <span>Punkt sprzedaży</span>
+      </div>
+
+      <div class="footer__nav-item" [routerLink]="'/orders'" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}">
+        <span>Zamówienia</span>
+      </div>
+
+      <div class="footer__nav-item" [routerLink]="'/contact'" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}">
+        <span>Kontakt</span>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+
+    <div class="footer__bottom">
+      <div class="footer__left-side">
+        <h5>A&M Kałuzińscy</h5>
+        <div class="footer__social">
+          <app-social-buttons></app-social-buttons>
+        </div>
+        <span>Wszelkie prawa zastrzeżone A&M Kałuzińscy Szkółka Polskie Korzenie © & mayka.pl</span>
+      </div>
+      
+      <div class="footer__right-side">
+        <h5>Zapisz się do newslettera</h5>
+        <div class="footer__newsletter">
+          <input type="text" placeholder="Adres e-mail" class="footer__newsletter-input">
+          <button class="btn">Zapisz</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

@@ -1,0 +1,24 @@
+<div class="toolbar">
+  <div class="toolbar__filters">
+    <button
+      class="toolbar__filter"
+      *ngFor="let filter of filters$ | async"
+      [class.active]="activeFilter?.key === filter.key"
+      (click)="setActiveFilter(filter)">
+      {{ filter.name }}
+    </button>
+  </div>
+
+  <div class="toolbar__search">
+    <div class="toolbar__input">
+      <input type="text" [formControl]="searchTerm" placeholder="Wyszukaj">
+      <div class="toolbar__loupe" (click)="search()">
+        <img src="/assets/images/loupe.svg" alt="">
+      </div>
+    </div>
+
+    <div class="toolbar__clear" (click)="clear()">
+      <img src="/assets/images/filters-delete.svg" alt="">
+    </div>
+  </div>
+</div>

@@ -1,0 +1,105 @@
+input, textarea {
+  font-family: 'Albert Sans', sans-serif !important;
+  background-color: transparent;
+  padding: 20px;
+  font-size: 16px;
+  color: #fff;
+  border: 1px solid #626176;
+  border-radius: 4px;
+
+  &::placeholder {
+    font-family: 'Albert Sans', sans-serif !important;
+    font-size: 16px;
+    color: #fff;
+  }
+}
+
+textarea {
+  resize: none !important;
+}
+
+input, textarea {
+  outline: none;
+}
+ 
+input:focus, textarea:focus {
+  box-shadow: 0;
+}
+
+
+.form {
+  margin: 40px 0;
+  display: flex;
+  justify-content: space-between;
+
+  @media(max-width: 678px) {
+    flex-wrap: wrap;
+  }
+
+  &__left-side {
+    width: 40%;
+
+    @media(max-width: 678px) {
+      width: 100%;
+      margin-bottom: 20px;
+    }
+  }
+
+  &__right-side {
+    width: 56%;
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+    justify-content: space-between;
+    box-sizing: border-box;
+
+    @media(max-width: 678px) {
+      width: 100%;
+    }
+
+    & input {
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    & button {
+      position: absolute;
+      bottom: -60px;
+      right: 0;
+    }
+  }
+  
+  &__fullname, &__company, &__phone, &__street, &__city, &__email {
+    width: 48%;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+  }
+
+  &__message {
+    width: 100%;
+    box-sizing: border-box;
+
+    & textarea {
+      width: 100%;
+      box-sizing: border-box;
+    }
+  }
+}
+
+.send-btn {
+  background-color: #CC000A;
+  border: 1px solid #CC000A;
+  padding: 1rem 2rem;
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 16px;
+  border-radius: 4px;
+  color: #fff;
+  cursor: pointer;
+  transition: 200ms ease-in-out;
+  width: 220px;
+
+  &:hover {
+    background-color: transparent;
+  }
+}

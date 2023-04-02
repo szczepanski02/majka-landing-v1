@@ -1,0 +1,8 @@
+.item {
+  box-sizing: border-box;
+  width: 100%;
+
+  & img {
+    width: 100%;
+  }
+}

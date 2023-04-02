@@ -1,0 +1,128 @@
+.toolbar {
+  display: flex;
+  width: 100%;
+  box-sizing: border-box;
+  margin: 40px 0;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #343434;
+
+  @media(max-width: 998px) {
+    flex-wrap: wrap;
+  }
+
+  &__filters {
+    width: 60%;
+    @media(max-width: 998px) {
+      width: 100%;
+      margin-bottom: 10px;
+    }
+  }
+
+  &__filter {
+    background-color: transparent;
+    font-size: 18px;
+    font-weight: 500;
+    color: #fff;
+    border: 0;
+    border-radius: 4px;
+    transition: 200ms ease-in-out;
+    padding: 20px;
+    font-family: 'Albert Sans', sans-serif;
+    cursor: pointer;
+    margin-right: 10px;
+
+    @media(max-width: 626px) {
+      width: 46%;
+    }
+
+    @media(max-width: 460px) {
+      width: 100%;
+    }
+
+    &:hover {
+      background-color: #FF1A25;
+    }
+  }
+
+  &__search {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 40%;
+    box-sizing: border-box;
+    @media(max-width: 998px) {
+      width: 100%;
+    }
+  }
+
+  &__input {
+    margin-right: 20px;
+    display: flex;
+    align-items: center;
+
+    & input {
+      @media(max-width: 626px) {
+        width: 100%;
+      }
+    }
+  }
+
+  &__loupe {
+    background-color: #FF1A25;
+    height: auto;
+    padding: 18px;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+    cursor: pointer;
+    transition: 200ms ease-in-out;
+
+    &:hover {
+      background-color: #ff3f48;
+    }
+  }
+
+  &__clear {
+    padding: 16px;
+    border: 2px solid #626176;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: 200ms ease-in-out;
+
+    &:hover {
+      background-color: rgb(24, 24, 24);
+    }
+  }
+}
+
+.active {
+  background-color: #FF1A25 !important;
+}
+
+
+
+// input fixes
+input {
+  font-family: 'Albert Sans', sans-serif !important;
+  background-color: transparent;
+  padding: 20px;
+  font-size: 16px;
+  color: #fff;
+  border: 1px solid #626176;
+  border-radius: 4px;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+
+  &::placeholder {
+    font-family: 'Albert Sans', sans-serif !important;
+    font-size: 16px;
+    color: #fff;
+  }
+}
+
+input {
+  outline: none;
+}
+ 
+input:focus, textarea:focus {
+  box-shadow: 0;
+}

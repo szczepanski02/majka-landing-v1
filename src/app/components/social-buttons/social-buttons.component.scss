@@ -1,0 +1,27 @@
+.buttons {
+  display: flex;
+  width: calc(40px * 3 + 14px * 3);
+  justify-content: space-between;
+  align-items: center;
+}
+
+.button {
+  width: 40px;
+  height: 40px;
+  border: 1px solid #626176;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: 200ms ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &:hover {
+    background-color: #626176;
+  }
+
+  & img {
+    width: 22px;
+    height: 22px;
+  }
+}
