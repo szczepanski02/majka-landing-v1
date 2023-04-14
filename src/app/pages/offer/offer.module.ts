@@ -1,4 +1,4 @@
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { offerPageRoute } from './offer.route';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -15,7 +15,7 @@ import { OfferItemDetailsTextComponent } from './offer-item-details-text/offer-i
 import { OfferItemDetailsGalleryComponent } from './offer-item-details-gallery/offer-item-details-gallery.component';
 import { OfferItemDetailsDialogComponent } from './offer-item-details-dialog/offer-item-details-dialog.component';
 import { OfferItemDetailsDialogService } from './offer-item-details-dialog/offer-item-details-dialog.service';
-
+import { OfferAdvancendFiltersComponent } from './offer-advancend-filters/offer-advancend-filters.component';
 
 
 @NgModule({
@@ -27,14 +27,16 @@ import { OfferItemDetailsDialogService } from './offer-item-details-dialog/offer
     OfferItemHoverBoxComponent,
     OfferItemDetailsTextComponent,
     OfferItemDetailsGalleryComponent,
-    OfferItemDetailsDialogComponent
+    OfferItemDetailsDialogComponent,
+    OfferAdvancendFiltersComponent
   ],
   imports: [
     CommonModule,
     LayoutModule,
     ComponentsModule,
     RouterModule.forChild([offerPageRoute]),
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormsModule,
   ],
   providers: [
     OfferService,

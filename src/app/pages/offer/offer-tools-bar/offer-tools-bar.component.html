@@ -17,8 +17,12 @@
       </div>
     </div>
 
-    <div class="toolbar__clear" (click)="clear()">
+    <div class="toolbar__advanced-btn" [class.active]="isAdvancedOpen$ | async" (click)="changeAdvancedState()">
       <img src="/assets/images/filters-delete.svg" alt="">
     </div>
   </div>
+</div>
+
+<div class="toolbar__advanced">
+  <app-offer-advancend-filters [isOpen]="(isAdvancedOpen$ | async)!"></app-offer-advancend-filters>
 </div>

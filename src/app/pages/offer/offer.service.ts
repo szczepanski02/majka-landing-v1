@@ -3,6 +3,9 @@ import { BehaviorSubject, combineLatest } from 'rxjs';
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { mockedFilters, mockedItems } from './offer-mocked.const';
+import { Option } from 'src/app/components/dropdown/dropdown.component';
+
+export type AdvancedFiltersModel = { [key: string]: Option[] };
 
 @Injectable()
 export class OfferService {
@@ -12,10 +15,11 @@ export class OfferService {
   private activeFilter$: BehaviorSubject<OfferFilter> = new BehaviorSubject<OfferFilter>(mockedFilters[0]);
   private searchTerm$: BehaviorSubject<string> = new BehaviorSubject<string>('');
   private page$: BehaviorSubject<number> = new BehaviorSubject<number>(1);
+  private advancedFilters$: BehaviorSubject<AdvancedFiltersModel> = new BehaviorSubject<AdvancedFiltersModel>({});
 
   constructor(private http: HttpClient) {
     this.loadFilters();
-    combineLatest([this.searchTerm$, this.activeFilter$, this.page$])
+    combineLatest([this.searchTerm$, this.activeFilter$, this.page$, this.advancedFilters$])
       .subscribe(([searchTerm, filter, page]) => {
         // this.http.get<OfferItem[]>(`GET_OFFER_ITEM_URL?search=${searchTerm}&filter=${filter}&page=${page}`)
         //   .subscribe({
@@ -67,6 +71,14 @@ export class OfferService {
 
   setPage(num: number): void {
     this.page$.next(num);
+  }
+
+  getAdvancedFilters(): Observable<AdvancedFiltersModel> {
+    return this.advancedFilters$.asObservable();
+  }
+
+  setAdvancedFilters(filters: AdvancedFiltersModel): void {
+    this.advancedFilters$.next(filters);
   }
 }
 

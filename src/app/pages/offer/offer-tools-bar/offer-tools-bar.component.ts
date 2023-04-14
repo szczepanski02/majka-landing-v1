@@ -1,4 +1,4 @@
-import { Observable, Subscription } from 'rxjs';
+import { BehaviorSubject, Observable, Subscription, first } from 'rxjs';
 import { Component, OnDestroy } from '@angular/core';
 import { OfferFilter, OfferService } from '../offer.service';
 import { FormControl } from '@angular/forms';
@@ -16,6 +16,8 @@ export class OfferToolsBarComponent implements OnDestroy {
   searchTerm: FormControl = new FormControl('');
 
   private subs = new Subscription();
+
+  isAdvancedOpen$: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
 
   constructor(private offerService: OfferService) {
     this.subs.add(this.offerService.getActiveFilter()
@@ -36,6 +38,12 @@ export class OfferToolsBarComponent implements OnDestroy {
   
   clear(): void {
     this.offerService.setSearchTerm('');
+  }
+
+  changeAdvancedState(): void {
+    this.subs.add(this.isAdvancedOpen$
+      .pipe(first())
+      .subscribe(state => this.isAdvancedOpen$.next(!state)));
   }
 
 }

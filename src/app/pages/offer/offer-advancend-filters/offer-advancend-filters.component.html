@@ -1,0 +1,83 @@
+<div class="filters" *ngIf="isOpen">
+  <div class="filters__header">
+    <h3>Zaawansowane filtrowanie</h3>
+    <div class="filters__buttons">
+      <button class="btn" (click)="clear()">Wyczyść filtry</button>
+      <button class="btn btn-filled" (click)="apply()">Zastosuj filtry</button>
+    </div>
+  </div>
+  
+  <div class="filters__content" *ngIf="isOpen">
+    <app-dropdown
+      #dropdown
+      [options]="filtersHabit"
+      [isMultiSelect]="true"
+      [placeholder]="'Pokrój'"
+      [parent]="this"
+      (selectedOptionChange)="filterChanged($event, FiltersArrayKey.HABIT)">
+    </app-dropdown>
+    
+    <app-dropdown
+      #dropdown
+      [options]="filtersBlooming"
+      [isMultiSelect]="true"
+      [placeholder]="'Kwitnienie'"
+      [parent]="this"
+      (selectedOptionChange)="filterChanged($event, FiltersArrayKey.BLOOMING)">
+    </app-dropdown>
+  
+    <app-dropdown
+      #dropdown
+      [options]="filtersSoil"
+      [isMultiSelect]="true"
+      [placeholder]="'Gleby'"
+      [parent]="this"
+      (selectedOptionChange)="filterChanged($event, FiltersArrayKey.SOIL)">
+    </app-dropdown>
+  
+    <app-dropdown
+      #dropdown
+      [options]="filtersApplication"
+      [isMultiSelect]="true"
+      [placeholder]="'Zastosowanie'"
+      [parent]="this"
+      (selectedOptionChange)="filterChanged($event, FiltersArrayKey.APPLICATION)">
+    </app-dropdown>
+  
+    <app-dropdown
+      #dropdown
+      [options]="filtersMaxHeight"
+      [isMultiSelect]="true"
+      [placeholder]="'Maksymalna wysokość'"
+      [parent]="this"
+      (selectedOptionChange)="filterChanged($event, FiltersArrayKey.MAX_HEIGHT)">
+    </app-dropdown>
+  
+    <app-dropdown
+      #dropdown
+      [options]="filtersPosition"
+      [isMultiSelect]="true"
+      [placeholder]="'Pozycja'"
+      [parent]="this"
+      (selectedOptionChange)="filterChanged($event, FiltersArrayKey.POSITION)">
+    </app-dropdown>
+  
+    <app-dropdown
+      #dropdown
+      [options]="filtersGrowthRate"
+      [isMultiSelect]="true"
+      [placeholder]="'Szybkość wzrostu'"
+      [parent]="this"
+      (selectedOptionChange)="filterChanged($event, FiltersArrayKey.GROWTH_RATE)">
+    </app-dropdown>
+  
+    <app-dropdown
+      #dropdown
+      [options]="filtersShowOnly"
+      [isMultiSelect]="true"
+      [placeholder]="'Wyświetlaj tylko'"
+      [parent]="this"
+      (selectedOptionChange)="filterChanged($event, FiltersArrayKey.SHOW_ONLY)">
+    </app-dropdown>
+  </div> 
+</div>

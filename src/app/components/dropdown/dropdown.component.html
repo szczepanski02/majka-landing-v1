@@ -1,0 +1,16 @@
+<div #dropdown class="dropdown">
+  <button (click)="isOpen ? close() : toggleDropdown()" class="dropdown-toggle" style="width: 100%;">
+    <span>{{ selectedOption?.name || placeholder || 'Select an option' }}</span>
+    <span class="arrow-down"></span>
+  </button>
+  <div class="dropdown-menu" [ngClass]="{'show': isOpen}" [ngStyle]="{'width.px': dropdownWidth}">
+    <div class="option" *ngFor="let option of options">
+      <label class="option-label">
+        <input type="checkbox" [checked]="option.checked" (change)="onOptionSelect(option, $event)">
+        <span class="option-name" (click)="onOptionClick(option)">
+          {{ option.name }}
+        </span>
+      </label>
+    </div>
+  </div>
+</div>

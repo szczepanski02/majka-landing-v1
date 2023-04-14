@@ -1,0 +1,80 @@
+.dropdown {
+  position: relative;
+}
+
+.dropdown-toggle {
+  background-color: transparent;
+  border: 1px solid #626176;
+  border-radius: 4px;
+  color: #fff;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+  line-height: 1.5;
+  padding: 6px 12px;
+}
+
+.dropdown-toggle .arrow-down {
+  border: solid #fff;
+  border-width: 0 2px 2px 0;
+  display: inline-block;
+  padding: 3px;
+  transform: rotate(45deg);
+  vertical-align: middle;
+}
+
+.dropdown-menu {
+  margin-top: 10px;
+  background-color: #333;
+  border: 1px solid #626176;
+  border-radius: 4px;
+  display: none;
+  left: 0;
+  padding: 10px;
+  position: absolute;
+  top: 100%;
+  width: 100%;
+  z-index: 100000;
+}
+
+.dropdown-menu.show {
+  display: block;
+}
+
+.option {
+  color: white;
+  cursor: pointer;
+  margin-bottom: 5px;
+  padding: 5px;
+}
+
+.option:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.option-label {
+  display: flex;
+  align-items: center;
+}
+
+.option input[type="checkbox"] {
+  display: inline-flex;
+  margin-right: 5px;
+  vertical-align: middle;
+  transform: scale(1.5);
+  outline: none;
+	content: none;	
+}
+
+.option-name {
+  display: inline-block;
+  margin-left: 5px;
+  vertical-align: middle;
+}
+
+input[type='checkbox'] {
+  accent-color: red;
+}
+

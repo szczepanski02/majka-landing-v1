@@ -81,7 +81,7 @@
     }
   }
 
-  &__clear {
+  &__advanced-btn {
     padding: 16px;
     border: 2px solid #626176;
     border-radius: 4px;
@@ -90,6 +90,15 @@
 
     &:hover {
       background-color: rgb(24, 24, 24);
+    }
+
+    &.active {
+      background-color: #ff3f48;
+      border: 2px solid #ff3f48; 
+
+      & img {
+        filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(241deg) brightness(103%) contrast(103%);
+      }
     }
   }
 }

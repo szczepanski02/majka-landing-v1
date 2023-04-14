@@ -1,0 +1,48 @@
+.filters {
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__buttons {
+    & button:nth-child(1) {
+      margin-right: 20px;
+    }
+
+    & button.btn-filled {
+      background-color: #FF1A25;
+      border: 1px solid #FF1A25;
+      color: #fff;
+
+      &:hover {
+        background-color: transparent;
+        color: #fff; 
+      }
+    }
+  }
+
+  &__content {
+    margin-bottom: 40px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  & app-dropdown {
+    margin-bottom: 20px;
+    width: 22%;
+
+    @media (max-width: 1100px) {
+      width: 30%;
+    }
+
+    @media(max-width: 820px) {
+      width: 46%;
+    }
+
+    @media(max-width: 578px) {
+      width: 100%;
+    }
+  }
+}
