@@ -1,8 +1,23 @@
 .item {
   box-sizing: border-box;
   width: 100%;
+  transition: 200ms ease-in-out;
+  position: relative;
+  cursor: pointer;
+
+  &:hover {
+    & p {
+      color: #FF1A25;
+    }
+    & img {
+      filter: brightness(40%);
+      outline: 4px solid #FF1A25;
+      border-radius: 4px;
+    }
+  }
 
   & img {
     width: 100%;
+    border-radius: 4px;
   }
 }

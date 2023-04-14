@@ -1,0 +1,68 @@
+.dialog {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 860px;
+  min-height: 200px;
+  padding: 20px;
+  box-sizing: border-box;
+  background-color: #0c0c0d;
+  border-radius: 4px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  z-index: 10000;
+
+  @media(max-width: 920px) {
+    width: 90%;
+  }
+
+  &__header {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+
+    & h4 {
+      margin: 0;
+    }
+  }
+
+  &__close {
+    width: 40px;
+    height: 40px;
+    background-color: #F6F6FB;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 4px;
+    cursor: pointer;
+
+    & img {
+      width: 20px;
+      height: 20px;
+    }
+  }
+
+  &__content {
+    display: flex;
+    justify-content: space-between;
+    @media(max-width: 920px) {
+      flex-wrap: wrap-reverse;
+    }
+  }
+
+  & app-offer-item-details-gallery, & app-offer-item-details-text {
+    width: 48%;
+    @media(max-width: 920px) {
+      width: 100%;
+    }
+  }
+}
+
+.divider {
+  width: 100%;
+  background-color: #626176;
+  height: 1px;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}

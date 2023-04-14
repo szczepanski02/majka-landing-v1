@@ -73,6 +73,11 @@ p {
   background: url('/assets/images/section-divider-center.jpg') center/cover no-repeat;
 }
 
+.scroll-prevent {
+  height: 100vh !important;
+  overflow-y: hidden !important;
+}
+
 .btn {
   background-color: transparent;
   border: 1px solid #FF1A25;

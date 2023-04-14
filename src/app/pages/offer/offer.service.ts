@@ -2,41 +2,14 @@ import { Observable } from 'rxjs';
 import { BehaviorSubject, combineLatest } from 'rxjs';
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
+import { mockedFilters, mockedItems } from './offer-mocked.const';
 
 @Injectable()
 export class OfferService {
 
-  mockedFilters: OfferFilter[] = [
-    { name: 'Liściaste', key: 'deciduous' },
-    { name: 'Iglaste', key: 'coniferous' },
-    { name: 'Szczepione', key: 'vaccinated' },
-    { name: 'Szczepione pienne', key: 'Grafted springs' }
-  ];
-
-  mockedItems: OfferItem[] = [
-    { url: '/assets/offer/offer-gallery-1.jpg', text: 'Acer palmatum "Atropurpureum"' },
-    { url: '/assets/offer/offer-gallery-2.jpg', text: 'Acer palmatum "Bloodgood"' },
-    { url: '/assets/offer/offer-gallery-3.jpg', text: 'Acer palmatum "Crimson Queen"' },
-    { url: '/assets/offer/offer-gallery-4.jpg', text: 'Acer palmatum "Emerald Lace"' },
-    { url: '/assets/offer/offer-gallery-5.jpg', text: 'Acer palmatum "Garnet"' },
-    { url: '/assets/offer/offer-gallery-6.jpg', text: 'Acer palmatum "Firecracker"' },
-    { url: '/assets/offer/offer-gallery-1.jpg', text: 'Acer palmatum "Atropurpureum"' },
-    { url: '/assets/offer/offer-gallery-2.jpg', text: 'Acer palmatum "Bloodgood"' },
-    { url: '/assets/offer/offer-gallery-3.jpg', text: 'Acer palmatum "Crimson Queen"' },
-    { url: '/assets/offer/offer-gallery-4.jpg', text: 'Acer palmatum "Emerald Lace"' },
-    { url: '/assets/offer/offer-gallery-5.jpg', text: 'Acer palmatum "Garnet"' },
-    { url: '/assets/offer/offer-gallery-6.jpg', text: 'Acer palmatum "Firecracker"' },
-    { url: '/assets/offer/offer-gallery-1.jpg', text: 'Acer palmatum "Atropurpureum"' },
-    { url: '/assets/offer/offer-gallery-2.jpg', text: 'Acer palmatum "Bloodgood"' },
-    { url: '/assets/offer/offer-gallery-3.jpg', text: 'Acer palmatum "Crimson Queen"' },
-    { url: '/assets/offer/offer-gallery-4.jpg', text: 'Acer palmatum "Emerald Lace"' },
-    { url: '/assets/offer/offer-gallery-5.jpg', text: 'Acer palmatum "Garnet"' },
-    { url: '/assets/offer/offer-gallery-6.jpg', text: 'Acer palmatum "Firecracker"' }
-  ];
-
   private filters$: BehaviorSubject<OfferFilter[]> = new BehaviorSubject<OfferFilter[]>([]);
   private items$: BehaviorSubject<OfferItem[]> = new BehaviorSubject<OfferItem[]>([]);
-  private activeFilter$: BehaviorSubject<OfferFilter> = new BehaviorSubject<OfferFilter>(this.mockedFilters[0]);
+  private activeFilter$: BehaviorSubject<OfferFilter> = new BehaviorSubject<OfferFilter>(mockedFilters[0]);
   private searchTerm$: BehaviorSubject<string> = new BehaviorSubject<string>('');
   private page$: BehaviorSubject<number> = new BehaviorSubject<number>(1);
 
@@ -50,7 +23,7 @@ export class OfferService {
         //     error: error => console.error(error)
         //   });
 
-        this.items$.next(this.mockedItems);
+        this.items$.next(mockedItems);
       });
   }
 
@@ -61,7 +34,7 @@ export class OfferService {
     //     next: filters => this.filters$.next(filters),
     //     error: error => console.error(error)
     //   });
-    this.filters$.next(this.mockedFilters);
+    this.filters$.next(mockedFilters);
   }
 
   loadItems(): void {
@@ -105,4 +78,14 @@ export interface OfferFilter {
 export interface OfferItem {
   url: string;
   text: string;
+  details: {
+    urls: string[];
+    available_containers: string;
+    desc: string;
+    height_after_10_years: number;
+    width_after_10_years: number;
+    habit: string;
+    position: string;
+    soil: string;
+  }
 }

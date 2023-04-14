@@ -1,0 +1,20 @@
+p {
+  padding: 0;
+  margin: 0;
+  font-size: 16px;
+}
+
+.details-text {
+  &__containers, &__description, &__param {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+  }
+}
+
+.divider {
+  width: 100%;
+  background-color: #626176;
+  height: 1px;
+  margin-bottom: 10px;
+}

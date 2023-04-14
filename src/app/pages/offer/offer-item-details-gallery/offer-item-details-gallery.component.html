@@ -1,0 +1,11 @@
+<div class="gallery">
+  <div class="gallery__main">
+    <img [src]="item.url" alt="">
+  </div>
+
+  <div class="gallery__additional">
+    <div class="gallery__item" *ngFor="let url of item.details.urls">
+      <img [src]="url" alt="">
+    </div>
+  </div>
+</div>

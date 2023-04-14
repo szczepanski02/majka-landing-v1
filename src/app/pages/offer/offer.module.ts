@@ -10,6 +10,11 @@ import { OfferGridComponent } from './offer-grid/offer-grid.component';
 import { OfferItemComponent } from './offer-item/offer-item.component';
 import { LayoutModule } from 'src/app/layout/layout.module';
 import { ComponentsModule } from 'src/app/components/components.module';
+import { OfferItemHoverBoxComponent } from './offer-item-hover-box/offer-item-hover-box.component';
+import { OfferItemDetailsTextComponent } from './offer-item-details-text/offer-item-details-text.component';
+import { OfferItemDetailsGalleryComponent } from './offer-item-details-gallery/offer-item-details-gallery.component';
+import { OfferItemDetailsDialogComponent } from './offer-item-details-dialog/offer-item-details-dialog.component';
+import { OfferItemDetailsDialogService } from './offer-item-details-dialog/offer-item-details-dialog.service';
 
 
 
@@ -18,7 +23,11 @@ import { ComponentsModule } from 'src/app/components/components.module';
     OfferComponent,
     OfferToolsBarComponent,
     OfferGridComponent,
-    OfferItemComponent
+    OfferItemComponent,
+    OfferItemHoverBoxComponent,
+    OfferItemDetailsTextComponent,
+    OfferItemDetailsGalleryComponent,
+    OfferItemDetailsDialogComponent
   ],
   imports: [
     CommonModule,
@@ -28,7 +37,8 @@ import { ComponentsModule } from 'src/app/components/components.module';
     ReactiveFormsModule
   ],
   providers: [
-    OfferService
+    OfferService,
+    OfferItemDetailsDialogService
   ]
 })
 export class OfferModule { }

@@ -1,25 +1,20 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { HOME_AWARDS, HomeAwardModel } from './home-awards.const';
 
 @Component({
   selector: 'app-home-awards',
   templateUrl: './home-awards.component.html',
   styleUrls: ['./home-awards.component.scss']
 })
-export class HomeAwardsComponent implements OnInit {
+export class HomeAwardsComponent {
 
-  awards: string[] = [
-    'Złoty medal w konkursie “Zieleń to życie”',
-    'Konkurs na Najpiękniejszy Kwiat',
-    'Srebrny medal w międzynarodowym konkursie',
-    'Złoty medal w konkursie “Zieleń to życie”',
-    'Srebrny medal w międzynarodowym konkursie',
-    'Konkurs na Najpiękniejszy Kwiat',
-    'Brązowy medal w konkursie roślin nowości'
-  ];
+  awards: HomeAwardModel[] = HOME_AWARDS;
+  activeAwardIndex: number = 0;
   
   constructor() { }
 
-  ngOnInit(): void {
+  setActiveAward(index: number): void {
+    this.activeAwardIndex = index;
   }
 
 }

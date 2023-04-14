@@ -1,0 +1,13 @@
+<div class="dialog">
+  <div class="dialog__header">
+    <h4>{{ item.text }}</h4>
+    <div class="dialog__close" (click)="close()">
+      <img src="/assets/images/close.svg" alt="">
+    </div>
+  </div>
+  <div class="divider"></div>
+  <div class="dialog__content">
+    <app-offer-item-details-gallery [item]="item"></app-offer-item-details-gallery>
+    <app-offer-item-details-text [item]="item"></app-offer-item-details-text>
+  </div>
+</div>

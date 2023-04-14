@@ -19,3 +19,6 @@
 
   <app-footer></app-footer>
 </div>
+
+
+<app-offer-item-details-dialog *ngIf="dialogItem$ | async" [item]="(dialogItem$ | async)!"></app-offer-item-details-dialog>
