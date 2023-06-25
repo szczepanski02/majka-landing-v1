@@ -42,8 +42,8 @@
       <div class="footer__right-side">
         <h5>{{ getTranslation('newsletter') | async }}</h5>
         <div class="footer__newsletter">
-          <input type="text" [placeholder]="getTranslation('kontakt_email') | async" class="footer__newsletter-input">
-          <button class="btn">{{ getTranslation('zapisz') | async }}</button>
+          <input type="text" [formControl]="emailControl" [placeholder]="getTranslation('kontakt_email') | async" class="footer__newsletter-input">
+          <button class="btn" (click)="newsletter()">{{ getTranslation('zapisz') | async }}</button>
         </div>
       </div>
     </div>

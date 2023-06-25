@@ -8,6 +8,7 @@ import { FooterComponent } from './footer/footer.component';
 import { ComponentsModule } from '../components/components.module';
 import { LangSelectorComponent } from './navbar/lang-selector/lang-selector.component';
 import { MobileLangSelectorComponent } from './navbar-mobile/mobile-lang-selector/mobile-lang-selector.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -24,7 +25,8 @@ import { MobileLangSelectorComponent } from './navbar-mobile/mobile-lang-selecto
     CommonModule,
     RouterLinkActive,
     RouterLink,
-    ComponentsModule
+    ComponentsModule,
+    ReactiveFormsModule,
   ],
   exports: [
     HeaderComponent,
