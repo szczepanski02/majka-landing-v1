@@ -1,4 +1,6 @@
 import { Component, Input, OnInit, AfterViewInit, ViewChild, ElementRef } from '@angular/core';
+import { Observable } from 'rxjs';
+import { TranslationsProviderService } from 'src/app/translations-provider.service';
 
 @Component({
   selector: 'app-header',
@@ -15,7 +17,7 @@ export class HeaderComponent implements OnInit, AfterViewInit {
   @Input() overlays: HeaderOverlays[] = [];
   @Input() showCompanyName = false;
 
-  constructor() { }
+  constructor(private txTranslation: TranslationsProviderService) { }
 
   ngOnInit(): void {
   }
@@ -54,6 +56,10 @@ export class HeaderComponent implements OnInit, AfterViewInit {
 
   get hasBilateralOverload(): boolean {
     return this.overlays.find(o => o === HeaderOverlays.BILATERAL_OVERLOAD) !== undefined;
+  }
+
+  getTranslation(key: string): Observable<string> {
+    return this.txTranslation.getCoreTranslation(key);
   }
 
 }

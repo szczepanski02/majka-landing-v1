@@ -1,0 +1,19 @@
+<div #dropdown class="dropdown">
+
+  <button class="dropdown-toggle" (click)="isOpen ? close() : toggleDropdown()">
+    <img [src]="selectedOption ? '/assets/flags/' + selectedOption.flag : '/assets/flags/en.svg'" alt="">
+    <span class="arrow-down"></span>
+  </button>
+
+  <div class="dropdown-menu" [ngClass]="{'show': isOpen}" [ngStyle]="{'width.px': 100}">
+    <div class="option" *ngFor="let option of options" [class.active]="selectedOption && selectedOption.name === option.name">
+      <label class="option-label" (click)="onOptionClick(option)">
+        <img [src]="'/assets/flags/' + option.flag" alt="">
+        <span class="option-name">
+          {{ option.name }}
+        </span>
+      </label>
+    </div>
+  </div>
+
+</div>

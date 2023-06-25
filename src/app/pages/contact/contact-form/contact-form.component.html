@@ -1,41 +1,40 @@
 <div class="form">
   <div class="form__left-side">
-    <h3 class="section-title">A&M Kałuzińscy <br/>Szkółka Polskie Korzenie</h3>
-    <p>Boczki-Parcela 14 <br />98-240 Szadek</p>
-    <span>GPS N: 51° 42' 53" E: 18° 51' 52"</span>
+    <h3 class="section-title" [innerHTML]="section.title"></h3>
+    <div [innerHTML]="section.content"></div>
   </div>
 
   <form class="form__right-side" [formGroup]="form">
 
     <div class="form__fullname">
-      <input id="fullName" type="text" placeholder="Imię i nazwisko" formControlName="fullName">
+      <input id="fullName" type="text" [placeholder]="getTranslation('kontakt_imie_nazwisko') | async" formControlName="fullName">
     </div>
 
     <div class="form__company">
-      <input id="company" type="text" placeholder="Firma" formControlName="company">
+      <input id="company" type="text" [placeholder]="getTranslation('kontakt_firma') | async" formControlName="company">
     </div>
 
     <div class="form__phone">
-      <input id="phone" type="text" placeholder="Telefon" formControlName="phone">
+      <input id="phone" type="text" [placeholder]="getTranslation('kontakt_telefon') | async" formControlName="phone">
     </div>
 
     <div class="form__street">
-      <input id="street" type="text" placeholder="Ulica" formControlName="street">
+      <input id="street" type="text" [placeholder]="getTranslation('kontakt_ulica') | async" formControlName="street">
     </div>
 
     <div class="form__city">
-      <input id="city" type="text" placeholder="Miasto" formControlName="city">
+      <input id="city" type="text" [placeholder]="getTranslation('kontakt_miasto') | async" formControlName="city">
     </div>
 
     <div class="form__email">
-      <input id="email" type="text" placeholder="Adres e-mail" formControlName="email">
+      <input id="email" type="text" [placeholder]="getTranslation('kontakt_email') | async" formControlName="email">
     </div>
 
     <div class="form__message">
-      <textarea id="message" rows="4" type="text" placeholder="Wiadomość" formControlName="message"></textarea>
+      <textarea id="message" rows="4" type="text" [placeholder]="getTranslation('kontakt_wiadomosc') | async" formControlName="message"></textarea>
     </div>
 
-    <button class="send-btn" (click)="send()">Wyślij</button>
+    <button class="send-btn" (click)="send()">{{ getTranslation('wyslij_form_kontaktowy') | async }}</button>
 
   </form>
 </div>

@@ -3,27 +3,27 @@
 
     <div class="footer__nav">
       <div class="footer__nav-item" [routerLink]="'/offer'" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}">
-        <span>Oferta</span>
+        <span>{{ getTranslation('oferta') | async }}</span>
       </div>
 
       <div class="footer__nav-item" [routerLink]="'/own-varieties'" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}">
-        <span>Odmiany własne</span>
+        <span>{{ getTranslation('odmiany') | async }}</span>
       </div>
 
       <div class="footer__nav-item" [routerLink]="'/selling-conditions'" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}">
-        <span>Warunki sprzedaży</span>
+        <span>{{ getTranslation('warunkisprzedazy') | async }}</span>
       </div>
 
       <div class="footer__nav-item" [routerLink]="'/selling-points'" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}">
-        <span>Punkt sprzedaży</span>
+        <span>{{ getTranslation('punktsprzedazy') | async }}</span>
       </div>
 
       <div class="footer__nav-item" [routerLink]="'/orders'" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}">
-        <span>Zamówienia</span>
+        <span>{{ getTranslation('zamowienia') | async }}</span>
       </div>
 
       <div class="footer__nav-item" [routerLink]="'/contact'" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}">
-        <span>Kontakt</span>
+        <span>{{ getTranslation('kontakt') | async }}</span>
       </div>
     </div>
 
@@ -36,14 +36,14 @@
         <div class="footer__social">
           <app-social-buttons></app-social-buttons>
         </div>
-        <span>Wszelkie prawa zastrzeżone A&M Kałuzińscy Szkółka Polskie Korzenie © & mayka.pl</span>
+        <span>{{ getTranslation('copyright') | async }}</span>
       </div>
       
       <div class="footer__right-side">
-        <h5>Zapisz się do newslettera</h5>
+        <h5>{{ getTranslation('newsletter') | async }}</h5>
         <div class="footer__newsletter">
-          <input type="text" placeholder="Adres e-mail" class="footer__newsletter-input">
-          <button class="btn">Zapisz</button>
+          <input type="text" [placeholder]="getTranslation('kontakt_email') | async" class="footer__newsletter-input">
+          <button class="btn">{{ getTranslation('zapisz') | async }}</button>
         </div>
       </div>
     </div>

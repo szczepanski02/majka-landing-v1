@@ -1,10 +1,10 @@
 <div class="item">
   <div class="item__left-side">
-    <img [src]="item.url" alt="">
+    <img [src]="item.image" alt="">
   </div>
 
   <div class="item__right-side">
     <h4 class="section-title">{{ item.title }}</h4>
-    <p>{{ item.desc }}</p>
+    <div [innerHTML]="item.content"></div>
   </div>
 </div>

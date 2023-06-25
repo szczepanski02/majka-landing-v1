@@ -9,7 +9,7 @@
 
   <div class="container arrow-container" (click)="scroll(target)">
     <img src="/assets/images/arrow-down.svg" alt="">
-    <span>ZOBACZ WIĘCEJ</span>
+    <span>{{ getTranslation('wiecej_informacji') | async }}</span>
   </div>
 
   <div class="container social-media">

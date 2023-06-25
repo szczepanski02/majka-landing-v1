@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
 import { HeaderOverlays } from 'src/app/layout/header/header.component';
+import { PageTranslationsModel, TranslationsProviderService } from 'src/app/translations-provider.service';
 
 @Component({
   selector: 'app-selling-points',
@@ -9,8 +11,12 @@ import { HeaderOverlays } from 'src/app/layout/header/header.component';
 export class SellingPointsComponent implements OnInit {
 
   public HeaderOverlays = HeaderOverlays;
+
+  sellingPointsTranslations$: Observable<PageTranslationsModel> = this.txProvider.sellingPointsTranslations;
   
-  constructor() { }
+  constructor(
+    private txProvider: TranslationsProviderService,
+  ) { }
 
   ngOnInit(): void {
   }

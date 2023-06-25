@@ -1,5 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { OwnVarietiesItemModel } from '../own-varieties.service';
+import { Component, Input } from '@angular/core';
+import { PageSection } from 'src/app/translations-provider.service';
 
 @Component({
   selector: 'app-own-varieties-item-left-text',
@@ -8,7 +8,7 @@ import { OwnVarietiesItemModel } from '../own-varieties.service';
 })
 export class OwnVarietiesItemLeftTextComponent {
 
-  @Input() item!: OwnVarietiesItemModel;
+  @Input() item!: PageSection;
 
   constructor() { }
 

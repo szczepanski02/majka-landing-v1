@@ -1,13 +1,12 @@
 <div class="container">
   <div class="transport">
     <div class="transport__dark-quare"></div>
-    <div class="transport__img">
-      <img src="/assets/images/selling-conditions-transport.jpg" width="100%" alt="">
+    <div class="transport__img" *ngIf="section.image">
+      <img [src]="section.image" width="100%" alt="">
     </div>
     <div class="transport__text">
-      <h3 class="section-title">Transport</h3>
-      <p>W przypadku zamówień całopojazdowych typu TIR organizujemy bezpłatny transport na terenie Polski. Proponujemy pakowanie roślin na paletach, w skrzyniopaletach, oraz na paletach piętrowych (podobnych do wózków duńskich, tylko drewnianych), 
-        co zabezpiecza rośliny na czas transportu. Możliwy jest też, na życzenie klienta, załadunek luzem spiętrowanych roślin. Rośliny wysyłamy również, na koszt klienta, za pośrednictwem firm kurierskich.</p>
+      <h3 class="section-title">{{ section.title }}</h3>
+      <div [innerHTML]="section.content"></div>
     </div>
   </div>
 </div>

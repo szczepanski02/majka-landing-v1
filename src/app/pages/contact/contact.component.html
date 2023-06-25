@@ -1,14 +1,14 @@
 <app-header
-  title="Kontakt"
+  [title]="(contactTranslations$ | async)!.name"
   description=""
-  backgroundUrl="/assets/images/header-contact.jpg"
+  [backgroundUrl]="(contactTranslations$ | async)!.image"
   [overlays]="[HeaderOverlays.BILATERAL_OVERLOAD]">
 </app-header>
 
 <div class="content">
 
   <div class="container">
-    <app-contact-form></app-contact-form>
+    <app-contact-form [section]="(contactTranslations$ | async)!.website_sections[0]"></app-contact-form>
     <app-contact-persons></app-contact-persons>
     <app-contact-map></app-contact-map>
   </div>

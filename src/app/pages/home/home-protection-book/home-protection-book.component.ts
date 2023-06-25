@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { PageSection } from 'src/app/translations-provider.service';
 
 @Component({
   selector: 'app-home-protection-book',
@@ -7,9 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeProtectionBookComponent implements OnInit {
 
+  @Input() section!: PageSection;
+
   constructor() { }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
 }

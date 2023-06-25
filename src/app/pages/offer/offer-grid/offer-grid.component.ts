@@ -12,7 +12,6 @@ export class OfferGridComponent implements OnInit {
 
   constructor(private offerSerivce: OfferService) { }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
 }

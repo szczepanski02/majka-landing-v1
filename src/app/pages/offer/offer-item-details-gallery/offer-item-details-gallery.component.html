@@ -1,10 +1,10 @@
 <div class="gallery">
   <div class="gallery__main">
-    <img [src]="item.url" alt="">
+    <img [src]="item.images[0]" alt="">
   </div>
 
   <div class="gallery__additional">
-    <div class="gallery__item" *ngFor="let url of item.details.urls">
+    <div class="gallery__item" *ngFor="let url of item.images">
       <img [src]="url" alt="">
     </div>
   </div>

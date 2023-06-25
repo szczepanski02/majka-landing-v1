@@ -3,7 +3,7 @@
     <button
       class="toolbar__filter"
       *ngFor="let filter of filters$ | async"
-      [class.active]="activeFilter?.key === filter.key"
+      [class.active]="activeFilter?.id === filter.id"
       (click)="setActiveFilter(filter)">
       {{ filter.name }}
     </button>

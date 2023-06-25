@@ -3,6 +3,7 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { HeaderOverlays } from 'src/app/layout/header/header.component';
 import { OwnVarietiesItemModel, OwnVarietiesService } from './own-varieties.service';
 import { first, Subscription } from 'rxjs';
+import { PageTranslationsModel, TranslationsProviderService } from 'src/app/translations-provider.service';
 
 @Component({
   selector: 'app-own-varieties',
@@ -18,9 +19,14 @@ export class OwnVarietiesComponent implements OnInit, OnDestroy {
   page$: Observable<number> = this.ownVarietiesService.getCurrentPage()
     .pipe(filter(page => !!page));
 
+  ownVarietyTranslations$: Observable<PageTranslationsModel> = this.txProvider.ownVarietyTranslations;
+
   private subs = new Subscription();
 
-  constructor(private ownVarietiesService: OwnVarietiesService) {
+  constructor(
+    private ownVarietiesService: OwnVarietiesService,
+    private txProvider: TranslationsProviderService,
+  ) {
     this.loadItems(0);
   }
 

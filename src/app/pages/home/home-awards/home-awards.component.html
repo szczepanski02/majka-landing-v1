@@ -1,8 +1,8 @@
 <div class="container">
-  <div class="awards">
+  <div class="awards" *ngIf="awards.length > 0">
     <div class="awards__img">
-      <img [src]="awards[activeAwardIndex].img" width="100%" alt="">
-      <p>{{ awards[activeAwardIndex].desc }}</p>
+      <img [src]="awards[activeAwardIndex].image" width="100%" alt="">
+      <p>{{ awards[activeAwardIndex].content }}</p>
     </div>
     <div class="awards__text">
       <div class="awards__items">

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
 import { HeaderOverlays } from 'src/app/layout/header/header.component';
+import { PageTranslationsModel, TranslationsProviderService } from 'src/app/translations-provider.service';
 
 @Component({
   selector: 'app-contact',
@@ -10,7 +12,9 @@ export class ContactComponent implements OnInit {
 
   public HeaderOverlays = HeaderOverlays;
 
-  constructor() { }
+  contactTranslations$: Observable<PageTranslationsModel> = this.txProvider.contactTranslations;
+
+  constructor(private txProvider: TranslationsProviderService) { }
 
   ngOnInit(): void {
   }

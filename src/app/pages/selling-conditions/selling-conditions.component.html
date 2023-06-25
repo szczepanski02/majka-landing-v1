@@ -1,22 +1,22 @@
 <app-header
-  title="Warunki sprzedaży"
+  [title]="(sellingConditionsTranslations$ | async)!.name"
   description=""
-  backgroundUrl="/assets/images/header-selling-conditions.jpg"
+  [backgroundUrl]="(sellingConditionsTranslations$ | async)!.image"
   [overlays]="[HeaderOverlays.BILATERAL_OVERLOAD]">
 </app-header>
 
 <div class="content">
 
-  <div class="container">
+  <!-- <div class="container">
     <div class="introduction">
       <p>Niniejsze warunki sprzedaży są integralną częścią wszelkich umów zawieranych przez sprzedawcę. Obowiązują z chwilą zawarcia umowy lub wystawienia rachunku, co kupujący potwierdza podpisem na umowie lub rachunku. Warunki kupującego nie mają zastosowania, chyba, że na piśmie ustalono inaczej. Sprzedaż hurtową Szkółka Polskie Korzenie prowadzi od poniedziałku do piątku w godzinach od 08.00 do 16.00 i w soboty od 07.00 do 12.00, a w innych terminach po wcześniejszym uzgodnieniu.</p>
       <p>Minimalna kwota zakupu hurtowego to 2.000 zł, z minimalną ilością 10 sztuk z odmiany w doniczkach 2 l, 3 l, lub 5 szt. z odmiany w doniczkach 5 l i większych, oraz minimum 3 szt. roślin szczepionych. Przy zakupie większych ilości roślin prosimy uzgodnić przewidywany odbiór towaru z kilkudniowym wyprzedzeniem.</p>
     </div>
-  </div>
+  </div> -->
 
-  <app-selling-conditions-transport></app-selling-conditions-transport>
+  <app-selling-conditions-transport [section]="(sellingConditionsTranslations$ | async)!.website_sections[0]"></app-selling-conditions-transport>
   <div class="section-divider-right"></div>
-  <app-selling-conditions-prices></app-selling-conditions-prices>
+  <app-selling-conditions-prices [section]="(sellingConditionsTranslations$ | async)!.website_sections[1]"></app-selling-conditions-prices>
 
   <app-selling-conditions-additional-info></app-selling-conditions-additional-info>
 

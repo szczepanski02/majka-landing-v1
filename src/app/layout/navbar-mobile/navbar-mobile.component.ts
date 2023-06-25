@@ -1,4 +1,6 @@
 import { Component, AfterViewInit, ElementRef } from '@angular/core';
+import { Observable } from 'rxjs';
+import { TranslationsProviderService } from 'src/app/translations-provider.service';
 
 @Component({
   selector: 'app-navbar-mobile',
@@ -24,7 +26,7 @@ export class NavbarMobileComponent implements AfterViewInit {
     }
   }
 
-  constructor(private _eref: ElementRef) { }
+  constructor(private _eref: ElementRef, private txProvider: TranslationsProviderService) { }
 
   ngAfterViewInit(): void {
     document.addEventListener('scroll', (evt) => {
@@ -43,6 +45,10 @@ export class NavbarMobileComponent implements AfterViewInit {
       this.isNavbarCollapsed = false;
     }
     this.isNavbarCollapsed = !this.isNavbarCollapsed;
+  }
+
+  getTranslation(key: string): Observable<string> {
+    return this.txProvider.getCoreTranslation(key);
   }
 
 }

@@ -1,81 +1,81 @@
 <div class="filters" *ngIf="isOpen">
   <div class="filters__header">
-    <h3>Zaawansowane filtrowanie</h3>
+    <h3>{{ getCoreTranslation('wyszukiwarka_zaawansowana') | async }}</h3>
     <div class="filters__buttons">
-      <button class="btn" (click)="clear()">Wyczyść filtry</button>
-      <button class="btn btn-filled" (click)="apply()">Zastosuj filtry</button>
+      <button class="btn" (click)="clear()">{{ getCoreTranslation('wyczysc_filtry') | async }}</button>
+      <button class="btn btn-filled" (click)="apply()">{{ getCoreTranslation('zastosuj_filtry') | async }}</button>
     </div>
   </div>
   
   <div class="filters__content" *ngIf="isOpen">
     <app-dropdown
       #dropdown
-      [options]="filtersHabit"
+      [options]="(filtersHabit$ | async)!"
       [isMultiSelect]="true"
-      [placeholder]="'Pokrój'"
+      [placeholder]="(getCoreTranslation('pokroj') | async)!"
       [parent]="this"
       (selectedOptionChange)="filterChanged($event, FiltersArrayKey.HABIT)">
     </app-dropdown>
     
     <app-dropdown
       #dropdown
-      [options]="filtersBlooming"
+      [options]="(filtersBlooming$ | async)!"
       [isMultiSelect]="true"
-      [placeholder]="'Kwitnienie'"
+      [placeholder]="(getCoreTranslation('kwitnienie') | async)!"
       [parent]="this"
       (selectedOptionChange)="filterChanged($event, FiltersArrayKey.BLOOMING)">
     </app-dropdown>
   
     <app-dropdown
       #dropdown
-      [options]="filtersSoil"
+      [options]="(filtersSoil$ | async)!"
       [isMultiSelect]="true"
-      [placeholder]="'Gleby'"
+      [placeholder]="(getCoreTranslation('gleby') | async)!"
       [parent]="this"
       (selectedOptionChange)="filterChanged($event, FiltersArrayKey.SOIL)">
     </app-dropdown>
   
     <app-dropdown
       #dropdown
-      [options]="filtersApplication"
+      [options]="(filtersApplication$ | async)!"
       [isMultiSelect]="true"
-      [placeholder]="'Zastosowanie'"
+      [placeholder]="(getCoreTranslation('zastosowanie') | async)!"
       [parent]="this"
       (selectedOptionChange)="filterChanged($event, FiltersArrayKey.APPLICATION)">
     </app-dropdown>
   
     <app-dropdown
       #dropdown
-      [options]="filtersMaxHeight"
+      [options]="(filtersHabitType$ | async)!"
       [isMultiSelect]="true"
-      [placeholder]="'Maksymalna wysokość'"
+      [placeholder]="(getCoreTranslation('typ_pokroju') | async)!"
       [parent]="this"
-      (selectedOptionChange)="filterChanged($event, FiltersArrayKey.MAX_HEIGHT)">
+      (selectedOptionChange)="filterChanged($event, FiltersArrayKey.HABIT_TYPE)">
     </app-dropdown>
   
     <app-dropdown
       #dropdown
-      [options]="filtersPosition"
+      [options]="(filtersPosition$ | async)!"
       [isMultiSelect]="true"
-      [placeholder]="'Pozycja'"
+      [placeholder]="(getCoreTranslation('stanowisko') | async)!"
       [parent]="this"
       (selectedOptionChange)="filterChanged($event, FiltersArrayKey.POSITION)">
     </app-dropdown>
   
     <app-dropdown
       #dropdown
-      [options]="filtersGrowthRate"
+      [options]="(filtersGrowthRate$ | async)!"
       [isMultiSelect]="true"
-      [placeholder]="'Szybkość wzrostu'"
+      [placeholder]="(getCoreTranslation('szybkosc_wzrostu') | async)!"
       [parent]="this"
       (selectedOptionChange)="filterChanged($event, FiltersArrayKey.GROWTH_RATE)">
     </app-dropdown>
   
     <app-dropdown
       #dropdown
-      [options]="filtersShowOnly"
+      [options]="(filtersShowOnly$ | async)!"
       [isMultiSelect]="true"
-      [placeholder]="'Wyświetlaj tylko'"
+      [placeholder]="(getCoreTranslation('wyswietl_tylko') | async)!"
       [parent]="this"
       (selectedOptionChange)="filterChanged($event, FiltersArrayKey.SHOW_ONLY)">
     </app-dropdown>

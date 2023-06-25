@@ -2,12 +2,11 @@
   <div class="prices">
     <div class="prices__dark-quare"></div>
     <div class="prices__text">
-      <h3 class="section-title">Ceny</h3>
-      <p>Przedstawione ceny są cenami hurtowymi netto. Do faktury RR doliczany jest VAT. Jednocześnie informujemy Państwa, że nie jesteśmy płatnikami podatku VAT. Podane ceny katalogowe nie zawierają transportu, kosztów pakowania i etykietowania roślin.</p>
-      <p>Dla odbiorców, którzy zakupili towar w poprzednim roku za sumę 5.000 zł oraz dla nowych klientów, którzy dokonali zakupów w bieżącym roku powyżej 5.000 zł oferujemy rabat. Klienci obsługiwani po godzinach pracy szkółki tracą prawo do rabatu. Dla stałych klientów proponujemy możliwość negocjacji terminu zapłaty. Ceny podane w ofercie, mogą ulec zmianie.</p>
+      <h3 class="section-title">{{ section.title }}</h3>
+      <div [innerHTML]="section.content"></div>
     </div>
     <div class="prices__img">
-      <img src="/assets/images/selling-conditions-prices.jpg" width="100%" alt="">
+      <img [src]="section.image" width="100%" alt="">
     </div>
   </div>
 </div>

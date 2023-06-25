@@ -1,20 +1,11 @@
 <div class="container">
   <div class="our-offer">
     <div class="our-offer__text">
-      <h3 class="section-title">Nasza oferta</h3>
-      <p>Głównym produktem oferowanym szerokiemu gronu 
-        klientów są wyselekcjonowane odmiany roślin iglastych 
-        o wysokich parametrach, uprawiane w pojemnikach. W 
-        naszym asortymencie znajdziecie Państwo również drzewa 
-        i krzewy liściaste, wybranych gatunków i odmian. Każdego roku staramy się uatrakcyjnić naszą ofertę o nowe odmiany roślin 
-        z naszych bogatych mateczników, gdzie testujemy je przez 
-        kilka lat pod względem atrakcyjności i przydatności do uprawy 
-        w polskich warunkach klimatycznych. Polecamy rośliny uprawiane w doniczkach, ponieważ lepiej się przyjmują 
-        i można je sadzić przez cały sezon, od wiosny do jesieni.</p>
-        <button class="btn">Zobacz pełną ofertę</button>
+      <h3 class="section-title">{{ section.title }}</h3>
+      <div [innerHTML]="section.content"></div>
     </div>
     <div class="our-offer__img">
-      <img src="/assets/images/home-our-offer.jpg" width="100%" alt="">
+      <img [src]="section.image" width="100%" alt="">
     </div>
   </div>
 </div>

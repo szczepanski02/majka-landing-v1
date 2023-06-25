@@ -1,13 +1,13 @@
 <app-header
-  title="Punkt sprzedaży"
+  [title]="(sellingPointsTranslations$ | async)!.name"
   description=""
-  backgroundUrl="/assets/images/header-selling-points.jpg"
+  [backgroundUrl]="(sellingPointsTranslations$ | async)!.image"
   [overlays]="[HeaderOverlays.BILATERAL_OVERLOAD]">
 </app-header>
 
 <div class="content">
 
-  <app-selling-points-basic-info></app-selling-points-basic-info>
+  <app-selling-points-basic-info [section]="(sellingPointsTranslations$ | async)!.website_sections[0]"></app-selling-points-basic-info>
   <app-selling-points-map></app-selling-points-map>
 
   <div class="section-divider-left"></div>

@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { PageSection } from 'src/app/translations-provider.service';
 
 @Component({
   selector: 'app-home-full-offer',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home-full-offer.component.scss']
 })
 export class HomeFullOfferComponent implements OnInit {
+
+  @Input() section!: PageSection;
 
   constructor() { }
 

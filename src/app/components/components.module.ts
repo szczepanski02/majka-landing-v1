@@ -4,6 +4,8 @@ import { SocialButtonsComponent } from './social-buttons/social-buttons.componen
 import { PaginatorComponent } from './paginator/paginator.component';
 import { DropdownComponent } from './dropdown/dropdown.component';
 import { FormsModule } from '@angular/forms';
+import { LoadingFullscreenComponent } from './loading-fullscreen/loading-fullscreen.component';
+import { LoadingIndicatorComponent } from './loading-indicator/loading-indicator.component';
 
 
 
@@ -11,7 +13,9 @@ import { FormsModule } from '@angular/forms';
   declarations: [
     SocialButtonsComponent,
     PaginatorComponent,
-    DropdownComponent
+    DropdownComponent,
+    LoadingFullscreenComponent,
+    LoadingIndicatorComponent
   ],
   imports: [
     CommonModule,
@@ -20,7 +24,9 @@ import { FormsModule } from '@angular/forms';
   exports: [
     SocialButtonsComponent,
     PaginatorComponent,
-    DropdownComponent
+    DropdownComponent,
+    LoadingFullscreenComponent,
+    LoadingIndicatorComponent,
   ]
 })
 export class ComponentsModule { }

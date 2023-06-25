@@ -6,6 +6,8 @@ import { NavbarMobileComponent } from './navbar-mobile/navbar-mobile.component';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { FooterComponent } from './footer/footer.component';
 import { ComponentsModule } from '../components/components.module';
+import { LangSelectorComponent } from './navbar/lang-selector/lang-selector.component';
+import { MobileLangSelectorComponent } from './navbar-mobile/mobile-lang-selector/mobile-lang-selector.component';
 
 
 
@@ -14,7 +16,9 @@ import { ComponentsModule } from '../components/components.module';
     HeaderComponent,
     NavbarComponent,
     NavbarMobileComponent,
-    FooterComponent
+    FooterComponent,
+    LangSelectorComponent,
+    MobileLangSelectorComponent
   ],
   imports: [
     CommonModule,

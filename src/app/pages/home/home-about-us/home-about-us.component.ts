@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { PageSection } from 'src/app/translations-provider.service';
 
 @Component({
   selector: 'app-home-about-us',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home-about-us.component.scss']
 })
 export class HomeAboutUsComponent implements OnInit {
+
+  @Input() section!: PageSection;
 
   constructor() { }
 

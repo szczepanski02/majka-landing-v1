@@ -1,16 +1,12 @@
 <div class="container">
   <div class="basic-info">
     <div class="basic-info__img">
-      <img src="/assets/images/selling-points-basic-info.jpg" alt="">
+      <img [src]="section.image" alt="">
     </div>
     <div class="basic-info__text">
-      <p>Szanowni Państwo,
-        mamy zaszczyt poinformować, że przy naszej szkółce 
-        w Boczkach znajduje się Punkt Sprzedaży Detalicznej.</p>
-      <p>Punkt działa "na wezwanie", prosimy dzwonić domofonem, 
-        lub telefonicznie w przypadku zamkniętej bramy.</p>
+      <div [innerHTML]="section.content"></div>
 
-      <div class="basic-info__contact">
+      <!-- <div class="basic-info__contact">
         <div class="basic-info__phone">
           <img src="/assets/images/phone.svg" alt="">
           <span>514 878 454</span>
@@ -32,7 +28,7 @@
           <span class="red">Sob: </span>
           <span>7:00 - 12:30</span>
         </div>
-      </div>
+      </div> -->
     </div>
   </div>
 </div>

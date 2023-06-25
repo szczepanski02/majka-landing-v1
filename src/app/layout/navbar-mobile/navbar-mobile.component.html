@@ -4,7 +4,7 @@
           <img class="nav__logo-file" src="/assets/images/logo.png" width="40px" alt="logo A&M Kałuzińscy">
       </div>
 
-      <div class="mobile-nav__collapsing">
+      <div class="mobile-nav__collapsing" style="position: relative;">
           <div class="mobile-nav__hamburger-container">
               <div class="mobile-nav__hamburger" [ngClass]="{ 'change': isNavbarCollapsed }" (click)="changeHamburgerIconState()">
                   <div class="mobile-nav__hamburger-item-1"></div>
@@ -15,12 +15,17 @@
   
           <div class="mobile-nav__collapsed-container" [ngClass]="{'isOpen': isNavbarCollapsed === true, 'isHidden': isNavbarCollapsed === false }">
               <div class="mobile-nav__collapsed-content" [ngClass]="{'collapsedContentIsOpen': isNavbarCollapsed === true, 'collapsedContentIsHidden': isNavbarCollapsed === false }">
-                  <p class="mobile-nav__collapsed-item" [routerLink]="['/']" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}" (click)="changeHamburgerIconState()">Strona główna</p>
-                  <p class="mobile-nav__collapsed-item" [routerLink]="['/offer']" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}" (click)="changeHamburgerIconState()">Oferta</p>
-                  <p class="mobile-nav__collapsed-item" [routerLink]="['/own-varieties']" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}" (click)="changeHamburgerIconState()">Odmiany własne</p>
-                  <p class="mobile-nav__collapsed-item" [routerLink]="['/selling-conditions']" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}" (click)="changeHamburgerIconState()">Warunki sprzedaży</p>
-                  <p class="mobile-nav__collapsed-item" [routerLink]="['/selling-points']" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}" (click)="changeHamburgerIconState()">Punkt sprzedaży</p>
-                  <p class="mobile-nav__collapsed-item" [routerLink]="['/contact']" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}" (click)="changeHamburgerIconState()">Kontakt</p>
+                  <p class="mobile-nav__collapsed-item" [routerLink]="['/']" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}" (click)="changeHamburgerIconState()">{{ getTranslation('strona_glowna') | async }}</p>
+                  <p class="mobile-nav__collapsed-item" [routerLink]="['/offer']" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}" (click)="changeHamburgerIconState()">{{ getTranslation('oferta') | async }}</p>
+                  <p class="mobile-nav__collapsed-item" [routerLink]="['/own-varieties']" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}" (click)="changeHamburgerIconState()">{{ getTranslation('odmiany') | async }}</p>
+                  <p class="mobile-nav__collapsed-item" [routerLink]="['/selling-conditions']" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}" (click)="changeHamburgerIconState()">{{ getTranslation('warunkisprzedazy') | async }}</p>
+                  <p class="mobile-nav__collapsed-item" [routerLink]="['/selling-points']" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}" (click)="changeHamburgerIconState()">{{ getTranslation('punktsprzedazy') | async }}</p>
+                  <p class="mobile-nav__collapsed-item" [routerLink]="['/orders']" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}" (click)="changeHamburgerIconState()">{{ getTranslation('zamowienia') | async }}</p>
+                  <p class="mobile-nav__collapsed-item" [routerLink]="['/contact']" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact: true}" (click)="changeHamburgerIconState()">{{ getTranslation('kontakt') | async }}</p>
+              </div>
+
+              <div class="lang-selector">
+                <app-mobile-lang-selector></app-mobile-lang-selector>
               </div>
           </div>
       </div>

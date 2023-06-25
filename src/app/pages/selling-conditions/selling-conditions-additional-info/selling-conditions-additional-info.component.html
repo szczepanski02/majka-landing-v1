@@ -2,79 +2,16 @@
   <h3 class="section-title">Dodatkowe informacje</h3>
   <div class="additional-info">
 
-    <div class="additional-info__item">
+    <div class="additional-info__item" *ngFor="let item of items">
       <div class="additional-info__belt">
-        <h4>Płatność</h4>
-        <div class="additional-info__button" (click)="setIsOpen(1)">
-          <img src="/assets/images/plus.svg" *ngIf="isOpen !== 1" alt="">
-          <img src="/assets/images/minus.svg" *ngIf="isOpen === 1" alt="">
+        <h4>{{ item.name }}</h4>
+        <div class="additional-info__button" (click)="setIsOpen(item.id)">
+          <img src="/assets/images/plus.svg" *ngIf="isOpen !== item.id" alt="">
+          <img src="/assets/images/minus.svg" *ngIf="isOpen === item.id" alt="">
         </div>
       </div>
-      <div class="additional-info__collapsed-content" [@slideInOut]="isOpen === 1 ? 'in' : 'out'">
-        <p>Klient ma możliwość regulowania należności gotówką lub przelewem dokonanym przed odbiorem towaru.
-          Odroczony termin płatności mogą uzyskać stali klienci w przypadku:</p>
-        <li>Terminowego regulowania płatności,</li>
-        <li>Po uzyskaniu zgody naszej firmy na korzystanie z takiej formy płatności</li>
-
-        <span>W przypadku niedotrzymania terminu płatności klient traci uzyskany rabat.</span>
-      </div>
-    </div>
-
-    <div class="additional-info__item">
-      <div class="additional-info__belt">
-        <h4>Reklamacje</h4>
-        <div class="additional-info__button" (click)="setIsOpen(2)">
-          <img src="/assets/images/plus.svg" *ngIf="isOpen !== 2" alt="">
-          <img src="/assets/images/minus.svg" *ngIf="isOpen === 2" alt="">
-        </div>
-      </div>
-      <div class="additional-info__collapsed-content" [@slideInOut]="isOpen === 2 ? 'in' : 'out'">
-        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Facere placeat in modi hic fuga assumenda, earum error? Ratione rerum perferendis aliquam maiores totam nostrum quos, repellendus sed ex facilis aut?</p>
-
-        <span>W przypadku niedotrzymania terminu płatności klient traci uzyskany rabat.</span>
-      </div>
-    </div>
-
-    <div class="additional-info__item">
-      <div class="additional-info__belt">
-        <h4>Gwarancje</h4>
-        <div class="additional-info__button" (click)="setIsOpen(3)">
-          <img src="/assets/images/plus.svg" *ngIf="isOpen !== 3" alt="">
-          <img src="/assets/images/minus.svg" *ngIf="isOpen === 3" alt="">
-        </div>
-      </div>
-      <div class="additional-info__collapsed-content" [@slideInOut]="isOpen === 3 ? 'in' : 'out'">
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos, dolorem sequi ducimus possimus quidem itaque voluptate? Qui odio fuga maxime blanditiis quaerat, sunt, voluptatibus culpa, consectetur facere sapiente itaque ab!</p>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus aliquam ducimus dolor qui alias, eos, deserunt vero, sequi eum error quibusdam eligendi rerum dicta soluta earum veniam itaque tempore rem.</p>
-      </div>
-    </div>
-
-    <div class="additional-info__item">
-      <div class="additional-info__belt">
-        <h4>Odmiany ochronne</h4>
-        <div class="additional-info__button" (click)="setIsOpen(4)">
-          <img src="/assets/images/plus.svg" *ngIf="isOpen !== 4" alt="">
-          <img src="/assets/images/minus.svg" *ngIf="isOpen === 4" alt="">
-        </div>
-      </div>
-      <div class="additional-info__collapsed-content" [@slideInOut]="isOpen === 4 ? 'in' : 'out'">
-        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sint dicta libero modi excepturi asperiores reiciendis cum impedit! Labore minima molestiae autem, iste enim, nobis nostrum inventore voluptatem aliquam, vero id:</p>
-        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam beatae obcaecati asperiores dolores sint illo dignissimos saepe facilis, quos nemo odio rem a minima voluptatibus excepturi quas temporibus ipsum ea.</li>
-        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet ab provident dolore error, nulla quos nam asperiores magni incidunt? Doloremque numquam incidunt nemo quasi, quas explicabo dicta corrupti qui! Officiis.</li>
-      </div>
-    </div>
-
-    <div class="additional-info__item">
-      <div class="additional-info__belt">
-        <h4>Dane osobowe</h4>
-        <div class="additional-info__button" (click)="setIsOpen(5)">
-          <img src="/assets/images/plus.svg" *ngIf="isOpen !== 5" alt="">
-          <img src="/assets/images/minus.svg" *ngIf="isOpen === 5" alt="">
-        </div>
-      </div>
-      <div class="additional-info__collapsed-content" [@slideInOut]="isOpen === 5 ? 'in' : 'out'">
-        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Deserunt ducimus qui porro dicta fuga mollitia ratione numquam ipsam quia, cum a, et consectetur blanditiis odio architecto recusandae quasi sunt quidem.</p>
-        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officiis, dicta excepturi quam dolores voluptatibus illo. Magni possimus adipisci ratione dignissimos debitis atque ullam delectus harum optio. Ipsa ratione doloribus iste.</p>
+      <div class="additional-info__collapsed-content" [@slideInOut]="isOpen === item.id ? 'in' : 'out'">
+        <div [innerHTML]="item.content"></div>
       </div>
     </div>
 
