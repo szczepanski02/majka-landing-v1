@@ -1,4 +1,5 @@
 <app-header
+  [isHomePage]="true"
   [title]="(homeTranslations$ | async)!.name"
   [description]="(homeTranslations$ | async)!.short_description"
   [backgroundUrl]="(homeTranslations$ | async)!.image"

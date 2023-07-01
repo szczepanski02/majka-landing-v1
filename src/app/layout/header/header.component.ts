@@ -10,20 +10,27 @@ import { TranslationsProviderService } from 'src/app/translations-provider.servi
 export class HeaderComponent implements OnInit, AfterViewInit {
 
   @ViewChild('header') headerDiv!: ElementRef<HTMLDivElement>;
+  @ViewChild('videoPlayer', { static: true }) videoPlayer!: ElementRef;
 
   @Input() title!: string;
   @Input() description!: string;
   @Input() backgroundUrl!: string;
   @Input() overlays: HeaderOverlays[] = [];
   @Input() showCompanyName = false;
+  @Input() isHomePage = false;
+
+  isVideoLoaded = false;
 
   constructor(private txTranslation: TranslationsProviderService) { }
 
   ngOnInit(): void {
   }
+  
 
   ngAfterViewInit(): void {
-    this.headerDiv.nativeElement.style.backgroundImage = `url('${this.backgroundUrl}')`;
+    if (!this.isHomePage) {
+      this.headerDiv.nativeElement.style.backgroundImage = `url('${this.backgroundUrl}')`;
+    }
 
     if (this.hasLeftOverload) {
       this.headerDiv.nativeElement.style.clipPath = `polygon(0 0, 100% 0, 100% 93%, 0% 100%)`;
@@ -40,6 +47,12 @@ export class HeaderComponent implements OnInit, AfterViewInit {
 
   scroll(el: HTMLElement) {
     el.scrollIntoView();
+  }
+
+  async ionViewWillEnter() {
+    const video = await this.videoPlayer.nativeElement;
+    await video.muted;
+    await video.play();
   }
 
   get hasCurtain(): boolean {

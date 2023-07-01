@@ -1,11 +1,11 @@
 <div class="gallery">
   <div class="gallery__main">
-    <img [src]="item.images[0]" alt="">
+    <img [src]="item.images[0]" alt="" (mouseover)="showPreview(item.images[0])" (mouseout)="hidePreview()">
   </div>
 
   <div class="gallery__additional">
     <div class="gallery__item" *ngFor="let url of item.images">
-      <img [src]="url" alt="">
+      <img [src]="url" alt="" (mouseover)="showPreview(url)" (mouseout)="hidePreview()">
     </div>
   </div>
 </div>

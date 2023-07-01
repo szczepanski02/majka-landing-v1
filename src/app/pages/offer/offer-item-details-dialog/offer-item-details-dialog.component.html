@@ -1,13 +1,15 @@
-<div class="dialog">
-  <div class="dialog__header">
-    <h4>{{ item.name }}</h4>
-    <div class="dialog__close" (click)="close()">
-      <img src="/assets/images/close.svg" alt="">
+<div class="overlay">
+  <div class="dialog">
+    <div class="dialog__header">
+      <h4>{{ item.name }}</h4>
+      <div class="dialog__close" (click)="close()">
+        <img src="/assets/images/close.svg" alt="">
+      </div>
     </div>
-  </div>
-  <div class="divider" *ngIf="item.images.length > 0"></div>
-  <div class="dialog__content">
-    <app-offer-item-details-gallery [item]="item" *ngIf="item.images.length > 0"></app-offer-item-details-gallery>
-    <app-offer-item-details-text [item]="item"></app-offer-item-details-text>
+    <div class="divider" *ngIf="item.images.length > 0"></div>
+    <div class="dialog__content">
+      <app-offer-item-details-gallery [item]="item" *ngIf="item.images.length > 0"></app-offer-item-details-gallery>
+      <app-offer-item-details-text [item]="item"></app-offer-item-details-text>
+    </div>
   </div>
 </div>

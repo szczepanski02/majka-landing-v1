@@ -1,5 +1,5 @@
 <div class="item" (mouseover)="showHoverBox = true" (mouseout)="showHoverBox = false" (click)="openDetailsDialog()">
   <img [src]="item.images[0]" alt="">
-  <p>{{ item.short_description }}</p>
+  <p>{{ item.name }}</p>
   <app-offer-item-hover-box *ngIf="showHoverBox" [item]="item"></app-offer-item-hover-box>
 </div>

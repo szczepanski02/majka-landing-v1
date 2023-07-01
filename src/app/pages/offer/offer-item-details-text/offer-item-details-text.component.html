@@ -1,27 +1,27 @@
 <div class="details-text">
   <div class="divider" *ngIf="item.description"></div>
-  <div class="details-text__description">
+  <div class="details-text__description" *ngIf="item.description && item.description.length > 0">
     <p>{{ item.description }}</p>
   </div>
   <div class="divider" *ngIf="item.description"></div>
-  <div class="details-text__param">
+  <div class="details-text__param" *ngIf="item.height_after_10_years">
     <p>Wysokość po 10 latach (cm):</p>
     <p>{{ item.height_after_10_years }}</p>
   </div>
-  <div class="details-text__param">
+  <div class="details-text__param" *ngIf="item.width_after_10_years">
     <p>Szerokośc po 10 latach (cm):</p>
     <p>{{ item.width_after_10_years }}</p>
   </div>
-  <div class="details-text__param">
+  <div class="details-text__param" *ngIf="item.plant_type_of_habit && item.plant_type_of_habit.name">
     <p>Pokrój:</p>
-    <p>{{ item.plant_type_of_habit?.name }}</p>
+    <p>{{ item.plant_type_of_habit.name }}</p>
   </div>
-  <div class="details-text__param">
+  <div class="details-text__param" *ngIf="item.plant_position && item.plant_position.name">
     <p>Stanowisko:</p>
-    <p>{{ item.plant_position?.name }}</p>
+    <p>{{ item.plant_position.name }}</p>
   </div>
-  <div class="details-text__param">
+  <div class="details-text__param" *ngIf="item.plant_soil && item.plant_soil.name">
     <p>Gleby:</p>
-    <p>{{ item.plant_soil?.name }}</p>
+    <p>{{ item.plant_soil.name }}</p>
   </div>
 </div>

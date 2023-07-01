@@ -10,9 +10,21 @@ export class OfferItemDetailsGalleryComponent implements OnInit {
 
   @Input() item!: OfferItem;
 
+  showPreviewImage = false;
+  previewImage: string = '';
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  showPreview(url: string) {
+    this.showPreviewImage = true;
+    this.previewImage = url;
+  }
+
+  hidePreview() {
+    this.showPreviewImage = false;
   }
 
 }

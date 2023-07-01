@@ -1,4 +1,10 @@
 <div class="header" #header>
+  <div class="header__media" *ngIf="isHomePage">
+    <video [autoplay]="true" [loop]="true" [muted]="true" width="100%" height="100%" #videoPlayer>
+      <source src="/assets/index_fhd.mp4" type="video/mp4">
+    </video>
+  </div>
+
   <img class="left-curtain" *ngIf="hasCurtain" src="/assets/images/left-curtain.png" alt="">
   <img class="right-curtain" *ngIf="hasCurtain" src="/assets/images/right-curtain.png" alt="">
   <div class="container">
@@ -6,14 +12,15 @@
     <h3 class="header__title">{{ title }}</h3>
     <p class="header__desc">{{ description }}</p>
   </div>
-
-  <div class="container arrow-container" (click)="scroll(target)">
-    <img src="/assets/images/arrow-down.svg" alt="">
-    <span>{{ getTranslation('wiecej_informacji') | async }}</span>
-  </div>
-
-  <div class="container social-media">
-    <app-social-buttons></app-social-buttons>
+  <div class="row-positioned">
+    <div class="container arrow-container" (click)="scroll(target)">
+      <img src="/assets/images/arrow-down.svg" alt="">
+      <span>{{ getTranslation('wiecej_informacji') | async }}</span>
+    </div>
+  
+    <div class="container social-media">
+      <app-social-buttons></app-social-buttons>
+    </div>  
   </div>
 
   <div class="scroll-target" #target></div>

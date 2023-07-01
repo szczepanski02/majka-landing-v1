@@ -12,6 +12,16 @@
   background: center/cover no-repeat rgba(0, 0, 0, .45);
   box-sizing: border-box;
 
+  &__media video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+  }
+
   & .left-curtain {
     position: absolute;
     top: 0;
@@ -50,11 +60,21 @@
   }
 }
 
+.row-positioned {
+  max-width: 1140px;
+  width: 100%;
+  padding: 15px;
+  height: auto;
+  display: flex;
+  position: absolute;
+  align-items: center;
+  justify-content: space-between;
+  bottom: 120px;
+}
+
 .arrow-container {
   display: flex;
   align-items: center;
-  position: absolute;
-  bottom: 120px;
   cursor: pointer;
 
   & span {
@@ -73,8 +93,6 @@
 }
 
 .social-media {
-  position: absolute;
-  bottom: 120px;
   display: flex;
   justify-content: flex-end;
 }

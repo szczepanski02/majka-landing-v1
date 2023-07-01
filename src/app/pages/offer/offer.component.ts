@@ -1,4 +1,4 @@
-import { Observable, Subscription, combineLatest, first, map } from 'rxjs';
+import { Observable, Subscription, combineLatest, filter, first, map } from 'rxjs';
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { HeaderOverlays } from 'src/app/layout/header/header.component';
 import { MetaModel, OfferFilter, OfferItem, OfferService } from './offer.service';
@@ -50,6 +50,7 @@ export class OfferComponent implements OnInit, OnDestroy {
       this.offerService.getPage(),
       this.offerService.getAdvancedFilters(),
       this.txProvider.lang$
+      .pipe(filter(([searchTerm, filter, page, advancedFilters, lang]) => !!filter))
     ]).subscribe(([sarchTerm, filter, page, advancedFilters, lang]) => {
       this.offerService.loadItems(sarchTerm, page, filter.id, advancedFilters, lang);
     }));
