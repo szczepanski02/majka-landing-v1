@@ -29,6 +29,7 @@ export class OfferToolsBarComponent implements OnDestroy {
   }
 
   setActiveFilter(filter: OfferFilter): void {
+    this.offerService.setPage(1);
     this.offerService.setActiveFilter(filter);
   }
 
