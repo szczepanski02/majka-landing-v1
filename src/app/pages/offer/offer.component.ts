@@ -67,6 +67,7 @@ export class OfferComponent implements OnInit, OnDestroy {
 
   onPageChanged(num: number): void {
     this.offerService.setPage(num);
+    window.scrollTo({ top: 500, behavior: 'smooth' });
   }
 
 }
